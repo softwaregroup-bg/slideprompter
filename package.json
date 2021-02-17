@@ -1,0 +1,17 @@
+{
+    "name": "slideprompter",
+    "version": "1.0.4",
+    "description": "Text to speech for Google Slides",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "puppeteer-core": "^7.1.0"
+    },
+    "author": "Kalin Krustev",
+    "bin": {
+        "slideprompter": "./index.js"
+    },
+    "license": "ISC"
+}
