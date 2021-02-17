@@ -52,4 +52,4 @@ module.exports = {
 ## Recording the presentation
 
 To record the presentation use your favorite screen recorder, for example
-use `WIN+R` under Windows.
+use `WIN+ALT+R` under Windows.

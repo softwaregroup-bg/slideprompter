@@ -1,6 +1,6 @@
 {
     "name": "slideprompter",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "Text to speech for Google Slides",
     "main": "index.js",
     "scripts": {
