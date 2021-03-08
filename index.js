@@ -3,7 +3,7 @@
 /* eslint-disable no-console */
 const puppeteer = require('puppeteer-core');
 const path = require('path');
-const config = require(path.join(process.cwd(), 'slides'));
+const config = require(path.join(process.cwd(), process.argv[2] || 'slides'));
 
 function speak(what, voice) {
     const synth = window.speechSynthesis;
@@ -75,7 +75,7 @@ const delay = time => new Promise((resolve, reject) => setTimeout(resolve, time)
     await context.evaluate(speak, ['4', 1000], config.voice);
     await context.evaluate(speak, ['3', 1000], config.voice);
     await context.evaluate(speak, ['2', 1000], config.voice);
-    await context.evaluate(speak, ['1', 1000], config.voice);
+    await context.evaluate(speak, ['1', 5000], config.voice);
     for (const item of config.script.split(/\n\n|\r\n\r\n/g).map(text => text.trim())) {
         if (item.toLowerCase() === 'next') {
             await delay(1000);
