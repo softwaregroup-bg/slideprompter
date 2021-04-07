@@ -19,4 +19,4 @@ node_modules
 npm-debug.*
 yarn.lock
 .scannerwork
-slides.js*
+*slides.js*

@@ -71,15 +71,15 @@ const delay = time => new Promise((resolve, reject) => setTimeout(resolve, time)
     await page.keyboard.press('F5');
     await page.keyboard.up('ControlLeft');
     const context = await page.mainFrame().executionContext();
-    await context.evaluate(speak, ['5', 1000], config.voice);
-    await context.evaluate(speak, ['4', 1000], config.voice);
     await context.evaluate(speak, ['3', 1000], config.voice);
     await context.evaluate(speak, ['2', 1000], config.voice);
-    await context.evaluate(speak, ['1', 5000], config.voice);
+    await context.evaluate(speak, ['1', 7000], config.voice);
     for (const item of config.script.split(/\n\n|\r\n\r\n/g).map(text => text.trim())) {
         if (item.toLowerCase() === 'next') {
             await delay(1000);
             await page.keyboard.press('Space');
+        } else if (item.toLowerCase().startsWith('wait')) {
+            await delay(parseInt(item.split(' ')[1]) * 1000);
         } else {
             console.log(item);
             await context.evaluate(speak, [item], config.voice);

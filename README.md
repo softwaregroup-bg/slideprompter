@@ -53,3 +53,7 @@ module.exports = {
 
 To record the presentation use your favorite screen recorder, for example
 use `WIN+ALT+R` under Windows.
+
+>> NOTE
+>> You may need to edit puppeteer-core/lib/cjs/puppeteer/node/BrowserRunner.js
+>> ant set detached: true
